@@ -1,0 +1,12 @@
+com.example.ludo.app-core-1.6.0-0 /Users/pratik/.gradle/caches/transforms-3/1a1dd5b809cec79ea0d1440b813f634c/transformed/core-1.6.0/res
+com.example.ludo.app-jetified-window-1.0.0-beta04-1 /Users/pratik/.gradle/caches/transforms-3/1ba8d05a0965080943586c494e0aa4b2/transformed/jetified-window-1.0.0-beta04/res
+com.example.ludo.app-jetified-annotation-experimental-1.1.0-2 /Users/pratik/.gradle/caches/transforms-3/7dd871ca80fb2c2b00f249ead490a8eb/transformed/jetified-annotation-experimental-1.1.0/res
+com.example.ludo.app-jetified-window-java-1.0.0-beta04-3 /Users/pratik/.gradle/caches/transforms-3/c132967ebfb7143f82aaee5ad8c6043e/transformed/jetified-window-java-1.0.0-beta04/res
+com.example.ludo.app-debug-4 /Users/pratik/StudioProjects/Flutter_Ludo/android/app/src/debug/res
+com.example.ludo.app-main-5 /Users/pratik/StudioProjects/Flutter_Ludo/android/app/src/main/res
+com.example.ludo.app-pngs-6 /Users/pratik/StudioProjects/Flutter_Ludo/build/app/generated/res/pngs/debug
+com.example.ludo.app-resValues-7 /Users/pratik/StudioProjects/Flutter_Ludo/build/app/generated/res/resValues/debug
+com.example.ludo.app-rs-8 /Users/pratik/StudioProjects/Flutter_Ludo/build/app/generated/res/rs/debug
+com.example.ludo.app-mergeDebugResources-9 /Users/pratik/StudioProjects/Flutter_Ludo/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir
+com.example.ludo.app-mergeDebugResources-10 /Users/pratik/StudioProjects/Flutter_Ludo/build/app/intermediates/incremental/debug/mergeDebugResources/stripped.dir
+com.example.ludo.app-merged_res-11 /Users/pratik/StudioProjects/Flutter_Ludo/build/app/intermediates/merged_res/debug
