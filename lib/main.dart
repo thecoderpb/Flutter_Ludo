@@ -4,6 +4,7 @@ import './widgets/gameplay.dart';
 import 'package:provider/provider.dart';
 import './widgets/dice.dart';
 import './gameengine/model/dice_model.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -26,8 +27,8 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
   final String title;
+  MyHomePage({Key? key, required this.title}) : super(key: key);
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }

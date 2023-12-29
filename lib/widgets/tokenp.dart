@@ -7,9 +7,10 @@ import 'package:provider/provider.dart';
 class Tokenp extends StatelessWidget {
   final Token token;
   final List<double> dimentions;
-  Function(Token)callBack;
+  // Function(Token)callBack;
+
   Tokenp(this.token, this.dimentions);
-  Color _getcolor() {
+  Color? _getcolor() {
     switch (this.token.type) {
       case TokenType.green:
         return Colors.green;
@@ -45,7 +46,7 @@ class Tokenp extends StatelessWidget {
                 color: _getcolor(),
                 boxShadow: [
                   BoxShadow(
-                    color: _getcolor(),
+                    color: _getcolor() ?? Colors.transparent,
                     blurRadius: 5.0, // soften the shadow
                     spreadRadius: 1.0, //extend the shadow
                   )

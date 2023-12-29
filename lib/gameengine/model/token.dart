@@ -18,6 +18,6 @@ class Token
   final TokenType  type;
   Position   tokenPosition;
   TokenState tokenState;
-  int        positionInPath;
-  Token(this.type,this.tokenPosition,this.tokenState,this.id);
+  late int       positionInPath;
+  Token(this.type,this.tokenPosition,this.tokenState,this.id, this.positionInPath);
 }

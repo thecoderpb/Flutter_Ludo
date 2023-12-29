@@ -5,34 +5,32 @@ import './position.dart';
 import './token.dart';
 
 class GameState with ChangeNotifier {
-  List<Token> gameTokens = List<Token>(16);
-  List<Position> starPositions;
-  List<Position> greenInitital;
-  List<Position> yellowInitital;
-  List<Position> blueInitital;
-  List<Position> redInitital;
+  List<Token> gameTokens = [];
+  late List<Position> starPositions;
+  late List<Position> greenInitital;
+  late List<Position> yellowInitital;
+  late List<Position> blueInitital;
+  late List<Position> redInitital;
   GameState() {
     this.gameTokens = [
-      //Green Tokens home
-      Token(TokenType.green, Position(2, 2), TokenState.initial, 0),
-      Token(TokenType.green, Position(2, 3), TokenState.initial, 1),
-      Token(TokenType.green, Position(3, 2), TokenState.initial, 2),
-      Token(TokenType.green, Position(3, 3), TokenState.initial, 3),
-      //Yellow Token
-      Token(TokenType.yellow, Position(2, 11), TokenState.initial, 4),
-      Token(TokenType.yellow, Position(2, 12), TokenState.initial, 5),
-      Token(TokenType.yellow, Position(3, 11), TokenState.initial, 6),
-      Token(TokenType.yellow, Position(3, 12), TokenState.initial, 7),
+      Token(TokenType.green, Position(2, 2), TokenState.initial, 0, 0),
+      Token(TokenType.green, Position(2, 3), TokenState.initial, 1, 0),
+      Token(TokenType.green, Position(3, 2), TokenState.initial, 2, 0),
+      Token(TokenType.green, Position(3, 3), TokenState.initial, 3, 0),
+      Token(TokenType.yellow, Position(2, 11), TokenState.initial, 4, 0),
+      Token(TokenType.yellow, Position(2, 12), TokenState.initial, 5, 0),
+      Token(TokenType.yellow, Position(3, 11), TokenState.initial, 6, 0),
+      Token(TokenType.yellow, Position(3, 12), TokenState.initial, 7, 0),
       // Blue Token
-      Token(TokenType.blue, Position(11, 11), TokenState.initial, 8),
-      Token(TokenType.blue, Position(11, 12), TokenState.initial, 9),
-      Token(TokenType.blue, Position(12, 11), TokenState.initial, 10),
-      Token(TokenType.blue, Position(12, 12), TokenState.initial, 11),
+      Token(TokenType.blue, Position(11, 11), TokenState.initial, 8, 0),
+      Token(TokenType.blue, Position(11, 12), TokenState.initial, 9, 0),
+      Token(TokenType.blue, Position(12, 11), TokenState.initial, 10, 0),
+      Token(TokenType.blue, Position(12, 12), TokenState.initial, 11, 0),
       // Red Token
-      Token(TokenType.red, Position(11, 2), TokenState.initial, 12),
-      Token(TokenType.red, Position(11, 3), TokenState.initial, 13),
-      Token(TokenType.red, Position(12, 2), TokenState.initial, 14),
-      Token(TokenType.red, Position(12, 3), TokenState.initial, 15),
+      Token(TokenType.red, Position(11, 2), TokenState.initial, 12, 0),
+      Token(TokenType.red, Position(11, 3), TokenState.initial, 13, 0),
+      Token(TokenType.red, Position(12, 2), TokenState.initial, 14, 0),
+      Token(TokenType.red, Position(12, 3), TokenState.initial, 15, 0),
     ];
     this.starPositions = [
       Position(6, 1),
@@ -100,9 +98,8 @@ class GameState with ChangeNotifier {
       }
     }
   }
-  Token _updateBoardState(Token token, Position destination, int pathPosition) {
-    Token cutToken;
-    //when the destination is on any star
+  Token? _updateBoardState(Token token, Position destination, int pathPosition) {
+    late Token cutToken;
     if (this.starPositions.contains(destination)) {
       this.gameTokens[token.id].tokenState = TokenState.safe;
       //this.gameTokens[token.id].tokenPosition = destination;
@@ -157,6 +154,7 @@ class GameState with ChangeNotifier {
       // this.gameTokens[token.id].positionInPath = pathPosition;
       return cutToken;
     }
+    return null;
   }
 
   _updateInitalPositions(Token token) {

@@ -36,29 +36,33 @@ class _GamePlayState extends State<GamePlay> {
     }
     return keysMain;
   }
-  List<double> _getPosition(int row, int column) {
-    var listFrame = List<double>();
-    double x;
-    double y;
-    double w;
-    double h;
-    if(this.widget.keyBar.currentContext == null) return [0,0,0,0];
-    final RenderBox renderBoxBar = this.widget.keyBar.currentContext.findRenderObject();
-    final sizeBar = renderBoxBar.size;
-    final cellBoxKey = keyRefrences[row][column];
-    final RenderBox renderBoxCell =
-        cellBoxKey.currentContext.findRenderObject();
-    final positionCell = renderBoxCell.localToGlobal(Offset.zero);
-    x = positionCell.dx + 1;
-    y = (positionCell.dy - sizeBar.height + 1);
-    w = renderBoxCell.size.width - 2;
-    h = renderBoxCell.size.height - 2;
-    listFrame.add(x);
-    listFrame.add(y);
-    listFrame.add(w);
-    listFrame.add(h);
-    return listFrame;
-  }
+    List<double> _getPosition(int row, int column) {
+      List<double> listFrame = [];
+      double x;
+      double y;
+      double w;
+      double h;
+
+      if (this.widget.keyBar.currentContext == null) return [0, 0, 0, 0];
+
+      final RenderBox? renderBoxBar = this.widget.keyBar.currentContext!.findRenderObject() as RenderBox?;
+      final sizeBar = renderBoxBar?.size ?? Size.zero;
+
+      final cellBoxKey = keyRefrences[row][column];
+      final RenderBox? renderBoxCell = cellBoxKey.currentContext?.findRenderObject() as RenderBox?;
+
+      if (renderBoxCell != null) {
+        final positionCell = renderBoxCell.localToGlobal(Offset.zero);
+        x = positionCell.dx + 1;
+        y = positionCell.dy - sizeBar.height + 1;
+        w = renderBoxCell.size.width - 2;
+        h = renderBoxCell.size.height - 2;
+        listFrame.addAll([x, y, w, h]);
+      }
+
+      return listFrame;
+    }
+
     List<Tokenp> _getTokenList(){
     List<Tokenp> widgets = [];
     for(Token token in this.widget.gameState.gameTokens)
